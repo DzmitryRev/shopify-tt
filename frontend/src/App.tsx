@@ -8,8 +8,7 @@ import "./App.css";
 function App() {
     const [products, setProducts] = useState<ProductType[]>([]);
     useEffect(() => {
-        axios.get(BACKEND_URL).then((res) => {
-            console.log(res);
+        axios.get(BACKEND_URL + "/api/products").then((res) => {
             setProducts(res.data as ProductType[]);
         });
     }, []);
