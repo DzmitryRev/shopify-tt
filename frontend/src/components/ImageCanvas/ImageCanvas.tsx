@@ -5,7 +5,8 @@ type ImageCanvasProps = {
 };
 
 export function ImageCanvas({ imageUrl }: ImageCanvasProps) {
-    const img = useMemo(() => new Image(), []);
+    // const img = useMemo(() => new Image(), []);
+    const img = new Image();
     img.src = imageUrl;
 
     const canvasRef = useRef<HTMLCanvasElement>() as MutableRefObject<HTMLCanvasElement>;
@@ -16,7 +17,7 @@ export function ImageCanvas({ imageUrl }: ImageCanvasProps) {
             const ctx = canvas.getContext("2d");
             ctx?.drawImage(img, 0, 0, img.width, img.height);
         }
-    }, [img]);
+    }, []);
 
     return (
         <canvas
