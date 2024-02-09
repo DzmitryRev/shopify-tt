@@ -1,0 +1,16 @@
+.main {
+    flex: 1;
+    padding-block: 20px;
+}
+
+.main_container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-inline: 10px;
+
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, 280px);
+    grid-gap: 20px;
+}

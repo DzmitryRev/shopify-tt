@@ -1,0 +1,11 @@
+.footer {
+    background-color: var(--light-bg-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.footer_created-by {
+    font-weight: 100;
+    color: var(--dark-text-color);
+}

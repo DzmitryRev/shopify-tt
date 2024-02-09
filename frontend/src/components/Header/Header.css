@@ -1,0 +1,14 @@
+.header {
+    padding-block: 20px;
+}
+
+.header_container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-inline: 10px;
+}
+
+.header_logo {
+    font-size: 2rem;
+    font-weight: 700;
+}

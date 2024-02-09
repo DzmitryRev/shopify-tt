@@ -1,0 +1,22 @@
+.product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 340px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--light-bg-color);
+    box-shadow: 0px 0px 15px 5px var(--dark-shadow);
+}
+.product__image {
+    background-color: #fff;
+    width: 100%;
+    max-height: 249px;
+    border-radius: 10px;
+}
+
+.product__info {
+    font-size: 0.85rem;
+    overflow: hidden;
+}

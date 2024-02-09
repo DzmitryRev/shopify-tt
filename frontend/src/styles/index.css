@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100;400;600&display=swap");
+
+@import url(./reset.css);
+
+:root {
+    --container-width: 1280px;
+    --default-bg-color: #1a202c;
+    --light-bg-color: #242c3b;
+    --default-text-color: rgb(207, 212, 219);
+    --dark-text-color: rgb(169, 181, 196);
+    --dark-shadow: rgba(23, 26, 28, 0.2);
+}
+
+body {
+    background-color: var(--default-bg-color);
+    font-family: "Geologica", sans-serif;
+    font-weight: 300;
+    color: var(--default-text-color);
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
