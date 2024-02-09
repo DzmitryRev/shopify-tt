@@ -7,11 +7,11 @@ type ImageCanvasProps = {
 export function ImageCanvas({ imageUrl }: ImageCanvasProps) {
     // const img = useMemo(() => new Image(), []);
 
-    let img;
+    // let img: HTMLImageElement | null = null;
     const canvasRef = useRef<HTMLCanvasElement>() as MutableRefObject<HTMLCanvasElement>;
 
     useEffect(() => {
-        img = new Image();
+        const img = new Image();
         img.src = imageUrl;
         const canvas = canvasRef.current as unknown;
         if (canvas instanceof HTMLCanvasElement) {
@@ -20,12 +20,5 @@ export function ImageCanvas({ imageUrl }: ImageCanvasProps) {
         }
     }, [imageUrl]);
 
-    return (
-        <canvas
-            ref={canvasRef}
-            className="product__image"
-            width={img.width}
-            height={img.height}
-        ></canvas>
-    );
+    return <canvas ref={canvasRef} className="product__image" width={500} height={500}></canvas>;
 }
