@@ -1,32 +1,20 @@
-import { useRef, MutableRefObject } from "react";
+import { useEffect, useRef, MutableRefObject } from "react";
 
 type ImageCanvasProps = {
     imageUrl: string;
 };
 
 export function ImageCanvas({ imageUrl }: ImageCanvasProps) {
-    // const img = useMemo(() => new Image(), []);
-
-    // let img: HTMLImageElement | null = null;
     const canvasRef = useRef<HTMLCanvasElement>() as MutableRefObject<HTMLCanvasElement>;
+    const image = new Image();
+    image.src = imageUrl;
 
-    const img = new Image();
-    img.src = imageUrl;
-    const canvas = canvasRef.current as unknown;
-    if (canvas instanceof HTMLCanvasElement) {
-        const ctx = canvas.getContext("2d");
-        ctx?.drawImage(img, 0, 0, img.width, img.height);
-    }
+    useEffect(() => {
+        const context = canvasRef.current.getContext("2d");
+        image.onload = () => {
+            context?.drawImage(image, 0, 0, image.width, image.height);
+        };
+    }, []);
 
-    // useEffect(() => {
-    //     const img = new Image();
-    //     img.src = imageUrl;
-    //     const canvas = canvasRef.current as unknown;
-    //     if (canvas instanceof HTMLCanvasElement) {
-    //         const ctx = canvas.getContext("2d");
-    //         ctx?.drawImage(img, 0, 0, img.width, img.height);
-    //     }
-    // }, [imageUrl]);
-
-    return <canvas ref={canvasRef} className="product__image" width={500} height={500}></canvas>;
+    return <canvas ref={canvasRef} className="product__image" width={1200} height={890}></canvas>;
 }
